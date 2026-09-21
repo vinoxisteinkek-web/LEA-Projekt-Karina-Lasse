@@ -1,0 +1,30 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.cs]
+# Allgemeine Formatierung
+dotnet_sort_system_directives_first = true
+csharp_new_line_before_open_brace = types, methods, properties, indexers, events, anonymous_methods, control_blocks
+csharp_indent_case_contents = true
+csharp_indent_block_contents = true
+csharp_preserve_single_line_blocks = false
+
+# Namenskonventionen (einfach gehalten)
+# Typen und öffentliche Member: PascalCase
+# Private Felder: camelCase
+# Konstanten: PascalCase
+
+# Code-Stil Präferenzen
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = false:suggestion
+csharp_style_var_elsewhere = false:suggestion
+
+# Datei-Ende
+insert_final_newline = true

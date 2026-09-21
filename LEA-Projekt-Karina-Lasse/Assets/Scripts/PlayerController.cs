@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Transform head;
+    public float playerSpeed = 5f;
+    public float playerAcceleration = 10f;
+    private Rigidbody rb;
+    private Vector3 direction;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        direction = Input.GetAxis("Horizontal") * head.right + Input.GetAxis("Vertical") * head.forward;
+        rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, direction * playerSpeed, playerAcceleration * Time.deltaTime);
     }
 }
